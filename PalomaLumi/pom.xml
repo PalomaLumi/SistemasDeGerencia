@@ -48,6 +48,12 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-tomcat</artifactId>
+    		<scope>provided</scope>
+		</dependency>
+
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -68,12 +74,17 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <finalName>palomalumi</finalName> <!-- Nome do seu WAR -->
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+	<packaging>war</packaging>
+	
 
 </project>
